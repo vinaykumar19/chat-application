@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 
 import * as io from 'socket.io-client';
-import {observable, throwError, of, Observable} from 'rxjs';
+import {Observable,throwError, of} from 'rxjs';
 import { catchError, tap} from 'rxjs/operators';
 import { HttpClient,HttpHeaders} from '@angular/common/http';
 import { HttpErrorResponse, HttpParams} from '@angular/common/http';

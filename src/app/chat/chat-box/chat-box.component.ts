@@ -30,7 +30,7 @@ export class ChatBoxComponent implements OnInit {
 
   ngOnInit() {
   
-  this.authToken = this.cookie.get('authToken');
+  this.authToken = this.cookie.get('authtoken');
   this.userInfo = this.appService.getUserInfoFromLocalStorage();
   this.checkStatus();
   this.verifyUserConfirmation();
