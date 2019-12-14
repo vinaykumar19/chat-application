@@ -33,6 +33,8 @@ import { CookieService } from 'ngx-cookie-service';
        { path: '', redirectTo:'login',pathMatch:'full' },
        { path: '*', component:LoginComponent },
        { path: '**', component:LoginComponent }
+       
+
     ])
   ],
   providers: [AppService,CookieService],

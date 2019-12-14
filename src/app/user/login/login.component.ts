@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
 
             this.cookie.set('receiverId',apiResponse.data.userDetails.userId);
            
-            this.cookie.set('receiverName',apiResponse.data.userDetails.firstName+ ' ' + apiResponse.data.userDetails.lastName);
+            this.cookie.set('receiverName',apiResponse.data.userDetails.firstName + ' ' + apiResponse.data.userDetails.lastName);
            
             this.appService.setUserInfoInLocalStorage(apiResponse.data.userDetails);
            

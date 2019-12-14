@@ -26,7 +26,7 @@ public getUserInfoFromLocalStorage = () =>{
   public signupFunction(data): Observable <any>{
 
     const params = new HttpParams()
-    .set ('firstName', data.FirstName)
+    .set ('firstName', data.firstName)
     .set ('lastName', data.lastName)
     .set ('mobile', data.mobile)
     .set ('email',data.email)
