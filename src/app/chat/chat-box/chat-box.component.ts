@@ -38,7 +38,7 @@ export class ChatBoxComponent implements OnInit {
   }
  
   public checkStatus:any=()=>{
-    if (this.cookie.get('authToken')===undefined || this.cookie.get('authToken')==='' || this.cookie.get('authToken')===null){
+    if (this.cookie.get('authtoken')===undefined || this.cookie.get('authtoken')==='' || this.cookie.get('authtoken')===null){
 
       this.router.navigate(['/']);
       return false;
