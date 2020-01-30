@@ -14,9 +14,10 @@ import { RemoveSpecialCharPipe } from './../shared/pipe/remove-special-char.pipe
   ],
 
   exports:[
-
     UserDetailsComponent,
-
+    FirstCharComponent,
+    CommonModule,
+    FormsModule
   ]
 })
 export class SharedModule { }

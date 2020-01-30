@@ -1,7 +1,7 @@
 import { Component, OnInit, SimpleChanges, Input, Output,EventEmitter,OnChanges } from '@angular/core';
 
 @Component({
-  selector: 'first-char',
+  selector: 'app-first-char',
   templateUrl: './first-char.component.html',
   styleUrls: ['./first-char.component.css']
 })

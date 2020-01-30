@@ -1,7 +1,7 @@
 import { Component, OnInit, Input,EventEmitter,OnChanges,Output } from '@angular/core';
 
 @Component({
-  selector: 'user-details',
+  selector: 'app-user-details',
   templateUrl: './user-details.component.html',
   styleUrls: ['./user-details.component.css']
 })
