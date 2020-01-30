@@ -14,10 +14,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { AppService } from './app.service';
 import { CookieService } from 'ngx-cookie-service';
+import { RemoveSpecialCharPipe } from './shared/pipe/remove-special-char.pipe';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RemoveSpecialCharPipe
   ],
   imports: [
     CommonModule,

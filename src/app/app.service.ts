@@ -48,6 +48,13 @@ public getUserInfoFromLocalStorage = () =>{
 
    }// end of signinFiunction function
 
+   public logout():Observable<any>{
+
+    const params=new HttpParams()
+    .set('authToken',this.cookie.get('authtoken'))
+    return this.http.post(`${this.url}/api/v1/users/logout`,params);
+   } // end logout function
+
   private handleError(err:HttpErrorResponse){
 
     let errorMessage='';

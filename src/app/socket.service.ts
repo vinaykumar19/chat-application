@@ -58,6 +58,42 @@ public setUser = (authToken)=>{
 }// end setUser
 // events to be emitted
 
+public chatByUserId = (userId) => {
+
+  return Observable.create((observer)=> {
+
+    this.socket.on(userId, (data) => {
+
+      observer.next(data);
+
+    }); //end Socket
+
+  }); //end observable
+
+} //end chatByUserId
+
+public SendChatMessage=(chatMsgObject)=>{
+
+  this.socket.emit('chat-msg',chatMsgObject);
+
+} //end getChatMessage
+
+public markChatAsSeen =(userDetails)=>{
+  this.socket.emit('mark-chat-as-seen',userDetails);
+}
+
+public getChat( senderId, receiverId, skip ): Observable<any>{
+
+  return this.http.get(`${this.url}/api/v1/chat/get/for/user?senderId=${senderId} & receiverId = ${receiverId} & skip=${skip} & authToken = ${this.cookie.get('authToken')}`)
+  .pipe(
+    tap(data=>console.log('Data Received')),catchError(this.handleError))
+
+}
+
+public exitSocket=()=>{
+  this.socket.disconnect();
+}
+
 private handleError(err:HttpErrorResponse){
   let errorMessage='';
   if(err.error instanceof Error){
@@ -67,7 +103,10 @@ private handleError(err:HttpErrorResponse){
   
   errorMessage=`Server returned code: ${err.status}, error message is: ${err.message}`
   }
-console.error(errorMessage);
-return Observable.throw(errorMessage);
-}// end handleError
+ console.error(errorMessage);
+ return Observable.throw(errorMessage);
+ }// end handleError
+
+
+
 }
