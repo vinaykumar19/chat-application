@@ -5,7 +5,7 @@ import { RouterModule,Routes } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from '../shared/shared.module';
-
+import { ChatRouteGuardService } from './chat-route-guard.service';
 import { UserDetailsComponent} from '../shared/user-details/user-details.component';
 
 
@@ -17,10 +17,10 @@ import { UserDetailsComponent} from '../shared/user-details/user-details.compone
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     RouterModule.forChild([
-      { path:'chat', component:ChatBoxComponent}
+      { path:'chat', component:ChatBoxComponent,canActivate:[ChatRouteGuardService]}
     ]),
     SharedModule
   ],
-
+  providers:[ChatRouteGuardService]
 })
 export class ChatModule { }

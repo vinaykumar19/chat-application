@@ -19,6 +19,7 @@ import { RemoveSpecialCharPipe } from './../shared/pipe/remove-special-char.pipe
     CommonModule,
     FormsModule,
     RemoveSpecialCharPipe
+
   ]
 })
 export class SharedModule { }
