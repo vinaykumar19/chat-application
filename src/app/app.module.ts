@@ -14,13 +14,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { AppService } from './app.service';
 import { CookieService } from 'ngx-cookie-service';
-import { RemoveSpecialCharPipe } from './shared/pipe/remove-special-char.pipe';
+import { SharedModule } from './shared/shared.module';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    RemoveSpecialCharPipe
+    AppComponent
+    
   ],
   imports: [
     CommonModule,
@@ -30,6 +31,7 @@ import { RemoveSpecialCharPipe } from './shared/pipe/remove-special-char.pipe';
     AppRoutingModule,
     ChatModule,
     UserModule,
+    SharedModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot([
        { path: 'login', component:LoginComponent, pathMatch:'full' },
